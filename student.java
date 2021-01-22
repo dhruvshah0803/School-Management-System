@@ -1,11 +1,11 @@
 public class student extends Person{
 private int id;
 private int currentyr;
-private String course;
 private double cgpa;
 private double gpa;
 private double amountpaid;
 private int attendance;
+private String course;
 
 public student(int id,int currentyr,String course,double cgpa, double gpa,double amountpaid,int attendance, String name, String address, String phone_no, String email, String blood_group, int age ,String password) {
 super(name, address, phone_no, email, blood_group, age, password); 
@@ -59,11 +59,11 @@ public int getcurrentyr(){
 }
 
 public void setamountpaid(double amountpaid){
-    if(amountpaid==getFees()){
+    if(amountpaid== getFees()){
         System.out.println("Fully paid");
     }
     else{
-    double balance = getFees() - amountpaid;
+    //double balance = getFees() - amountpaid;
     System.out.println("The amount paid for your course is " + amountpaid + "and amount to be paid is " + balance);
     }
 }
@@ -76,6 +76,31 @@ public void getattendance(int attendance){
     
 
 }
+
+public int getId() {
+    return this.id;
+}
+
+public void setId(int id) {
+    this.id = id;
+}
+
+public String getCourse() {
+    return this.course;
+}
+
+public void setCourse(String course) {
+    this.course = course;
+}
+
+public int getAttendance() {
+    return this.attendance;
+}
+
+public void setAttendance(int attendance) {
+    this.attendance = attendance;
+}
+
 }
 
 
@@ -87,4 +112,3 @@ public void getattendance(int attendance){
 //constructor
 //getter and setter
 // balance payment = fees - paid
-}

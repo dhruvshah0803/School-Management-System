@@ -8,6 +8,15 @@ private String subject;
 private int experience;
 private long course_id;
 
+
+public teacher(String teacher_id, String subject, int experience, long course_id) {
+this.teacher_id = teacher_id;
+this.subject = subject;
+    this.experience = experience;
+    this.course_id = course_id;
+}
+
+
 public String getTeacher_id() {
     return this.teacher_id;
 }

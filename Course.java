@@ -7,6 +7,14 @@ public class Course{
     private int duration;
     private long courseId;
 
+    public Course(String courseName, String specialization, int fees, int duration, long courseId) {
+        this.courseName = courseName;
+        this.specialization = specialization;
+        this.fees = fees;
+        this.duration = duration;
+        this.courseId = courseId;
+    }
+
     public String getCourseName() {
         return this.courseName;
     }
