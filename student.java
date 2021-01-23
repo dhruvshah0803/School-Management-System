@@ -9,7 +9,6 @@ private double gpa;
 private double attendance;
 private String course;
 
-
 public student(int id,int currentyr,String course,double cgpa, double gpa,//double amountpaid
 double attendance, 
 String firstname,String lastname, String address,String phone_no, String email, String blood_group, int age ,String password) {

@@ -1,9 +1,9 @@
 package JAVA_Project_student;
 
 public class Person {
-    // name ,address ,phone no,email(auto), age,dob,blood grp, pass(auto) 
-    //constructor
-    //getter and setter
+// name ,address ,phone no,email(auto), age,dob,blood grp, pass(auto) 
+//constructor
+//getter and setter
 public String firstname;
 public String lastname;
 private String address;
