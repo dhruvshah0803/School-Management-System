@@ -1,4 +1,6 @@
-public class Person{
+package JAVA_Project_student;
+
+public class Person {
     // name ,address ,phone no,email(auto), age,dob,blood grp, pass(auto) 
     //constructor
     //getter and setter

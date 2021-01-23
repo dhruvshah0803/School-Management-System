@@ -7,7 +7,8 @@ private double amountpaid;
 private int attendance;
 private String course;
 
-public student(int id,int currentyr,String course,double cgpa, double gpa,double amountpaid,int attendance, String name, String address, String phone_no, String email, String blood_group, int age ,String password) {
+public student(int id,int currentyr,String course,double cgpa, double gpa,double amountpaid,int attendance, 
+String name, String address,String phone_no, String email, String blood_group, int age ,String password) {
 super(name, address, phone_no, email, blood_group, age, password); 
 this.id = id;
 this.currentyr = currentyr;
@@ -70,6 +71,7 @@ public void setamountpaid(double amountpaid){
 
 public double getamountpaid(){
     return (double) amountpaid;
+    
 }
 
 public void getattendance(int attendance){

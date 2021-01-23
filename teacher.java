@@ -1,3 +1,5 @@
+package JAVA_Project_student;
+
 public class teacher {
     // id,salary,subject,experience,
 //constructor
