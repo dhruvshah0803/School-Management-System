@@ -1,6 +1,6 @@
 package JAVA_Project_student;
 
-public class teacher {
+public class teacher extends Person {
     // id,salary,subject,experience,
 //constructor
 //getter and setter
@@ -11,13 +11,13 @@ private int experience;
 private long course_id;
 
 
-public teacher(String teacher_id, String subject, int experience, long course_id) {
+public teacher(String teacher_id, String subject, int experience, long course_id,String firstname,String lastname, String address,String phone_no, String email, String blood_group, int age ,String password) {
+    super(firstname,lastname,address, phone_no, email, blood_group, age,password); 
 this.teacher_id = teacher_id;
 this.subject = subject;
     this.experience = experience;
     this.course_id = course_id;
 }
-
 
 public String getTeacher_id() {
     return this.teacher_id;

@@ -5,11 +5,11 @@ public class Course {
     // return sem = duration /2
     private String courseName;
     private String specialization;
-    private int fees;
+    public double fees;
     private int duration;
     private long courseId;
 
-    public Course(String courseName, String specialization, int fees, int duration, long courseId) {
+    public Course(String courseName, String specialization, double fees, int duration, long courseId) {
         this.courseName = courseName;
         this.specialization = specialization;
         this.fees = fees;
@@ -33,7 +33,7 @@ public class Course {
         this.specialization = specialization;
     }
 
-    public int getFees() {
+    public double getFees() {
         return this.fees;
     }
 
