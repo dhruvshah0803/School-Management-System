@@ -1,8 +1,6 @@
 package JAVA_Project_student;
 
 public class Course {
-    // course name , specialization, fees, duration,course id, 
-    // return sem = duration /2
     private String courseName;
     private String specialization;
     public double fees;

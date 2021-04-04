@@ -14,8 +14,6 @@ public class Person {
     private int Defaultpasswordlength=10;
     private String password;
     
-    
-    
     public Person( String firstname, String lastname, String address, String phone_no, String email, String blood_group, int age ,String password) {
     this.firstname = firstname;
     this.lastname = lastname;

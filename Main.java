@@ -1,6 +1,7 @@
 package JAVA_Project_student;
-
 import java.util.*;
+
+// constructors
 // public student(int id,int currentyr,String course,double cgpa, double gpa,double amountpaid,double attendance, 
 // String firstname,String lastname, String address,String phone_no, String email, String blood_group, int age ,String password) 
 
@@ -8,6 +9,7 @@ import java.util.*;
 
 // public Person( String firstname, String lastname, String address, String phone_no, String email, String blood_group, int age ,String password)
 // public teacher(String teacher_id, String subject, int experience, long course_id)
+
 public class Main {
     public static void main(String[] args){
 // option menu -- student teacher course
@@ -160,7 +162,7 @@ switch (choice) {
       }
         break;
     case 3:
-    int cn;
+    int cn=0;
     System.out.println("Enter no of courses you want : ");
     cn=sc.nextInt();
     for(int i=1;i<=cn;i++) {
@@ -168,36 +170,33 @@ switch (choice) {
          System.out.println("Enter details of the course" + i);
          System.out.println("\n");
         Course[] crr; 
-        crr = new Course[cn];
-        System.out.println("Course id is" + crr[cn].getCourseId()); 
-        long courseId = sc.nextLong();
-         System.out.println("Your course name is : " +crr[cn].getCourseName());
-         String courseName=sc.next();
-        System.out.println("Your specialization" + crr[cn].getSpecialization());
-        String specialization=sc.next();
-        System.out.println("Fees to be paid for this course is " + crr[cn].getFees());
+        crr = new Course[cn+1];
+        System.out.println("Enter Course ID:");
+        int courseId = sc.nextInt(); 
+        System.out.println("Enter course name:");
+        String courseName=sc.next();
+         System.out.println("Enter specialization");
+         String specialization=sc.next();
+        System.out.println("Enter Fees");
         double fees=sc.nextDouble();
-        System.out.println("Your duration for the Course  is" + crr[cn].getDuration());
+        System.out.println("Enter Duration (in hours)");
         int duration = sc.nextInt();
-        
-        
+
         crr[i] = new Course(courseName,specialization,fees,duration,courseId);
 
         System.out.println("Do you want to confirm your data [Y/N]");
 
         char ch = sc.next().charAt(0);
-        if(ch == 'Y' ){
-            System.out.println("Course ID : " + crr[cn].getCourseId());
-            System.out.println("Course name :" + crr[cn].getCourseName());
-            System.out.println("specialization : " + crr[cn].getSpecialization());
-            System.out.println("Fees :" + crr[cn].getFees());
-            System.out.println("Duration   : " + crr[cn].getDuration());
+        if(ch == 'Y' || ch=='y'){
+            System.out.println("Course ID : " + crr[i].getCourseId());
+            System.out.println("Course name :" + crr[i].getCourseName());
+            System.out.println("specialization : " + crr[i].getSpecialization());
+            System.out.println("Fees :" + crr[i].getFees());
+            System.out.println("Duration   : " + crr[i].getDuration());
         }
         else break;
         } 
-        
-        
-     
+
         break;
     case 4:
     flag=1;
