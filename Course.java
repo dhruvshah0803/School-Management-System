@@ -11,7 +11,8 @@ public class Course {
         this.courseName = courseName;
         this.specialization = specialization;
         this.fees = fees;
-        this.duration = duration;
+        //this.duration = duration;
+        setDuration(duration);
         this.courseId = courseId;
     }
 
@@ -44,7 +45,11 @@ public class Course {
     }
 
     public void setDuration(int duration) {
-        this.duration = duration;
+        if(duration<20 || duration >150){
+            System.out.println("Duration is invalid");
+        }
+        else{
+        this.duration = duration;}
     }
 
     public long getCourseId() {

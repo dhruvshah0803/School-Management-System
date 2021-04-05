@@ -5,28 +5,29 @@ public class student extends Person {
     private int currentyr;
     private double cgpa;
     private double gpa;
-    //private double amountpaid;
     private double attendance;
     private String course;
     
-    public student(int id,int currentyr,String course,double cgpa, double gpa,//double amountpaid
+
+
+    public student(int id,int currentyr,String course,double cgpa, double gpa,
     double attendance, 
     String firstname,String lastname, String address,String phone_no, String email, String blood_group, int age ,String password) {
     super(firstname,lastname,address, phone_no, email, blood_group, age,password); 
-    this.id = id;   
-    this.currentyr = currentyr;
-    this.course = course;
-    this.cgpa = cgpa;
-    this.gpa = gpa;
-    //this.amountpaid = amountpaid;
-    this.attendance = attendance;
+    setId(id);   
+    setcurrentyr(currentyr);
+    setCourse(course);
+    setcgpa(cgpa);
+    setgpa(gpa);
+    setAttendance(attendance);
     }
     
-    public void setcgpa(int cgpa){
-        if(cgpa<1) {
+    public void setcgpa(double cgpa){
+        if(cgpa<1.0) {
         System.out.println("RESULT FAIL");
         }
-        else if(cgpa>=1 && cgpa<=4){
+        else if(cgpa>=1.0 && cgpa<=4.0){
+            this.cgpa=cgpa;
             System.out.println("RESULT PASS");
         }
         else{
@@ -38,16 +39,15 @@ public class student extends Person {
         return (double)this.cgpa;
     }
     
-    public void setgpa(int gpa){
-        if(gpa<1){
+    public void setgpa(double gpa){
+        if(gpa<1.0){
         System.out.println("RESULT FAIL");
         }
-        else if(gpa>=1 && gpa<=4){
+        if(gpa>=1.0 && gpa<=4.0){
+            this.gpa=gpa;
             System.out.println("RESULT PASS");
         }
-        else{
-            System.out.println("NO RESULT");
-        }
+
     }
     
     public double getgpa(){
@@ -55,34 +55,24 @@ public class student extends Person {
     }
     
     public void setcurrentyr(int currentyr){
+        if(currentyr>=2018 && currentyr<=2024){
         System.out.println("Current year is " + currentyr);
+        this.currentyr=currentyr;
+    }
+    else{
+        System.out.println("Please enter a valid year");
+    }
     }
     
     public int getcurrentyr(){
         return (int)currentyr;
     }
-    
-    // public void setamountpaid(double amountpaid){
         
-    //     if(amountpaid== getFees()){
-    //         System.out.println("Fully paid");
-    //     }
-    //     else{
-    //      double balance = getFees() - amountpaid;
-    //     System.out.println("The amount paid for your course is " + amountpaid + "and amount to be paid is " + balance);
-    //     }
-    // }
-    
-    //public double getamountpaid(){
-        //return (double) amountpaid;
-        
-    //}
-    
     public int getId() {
         return this.id;
     }
     
-    public void setId(int id) {
+    public void setId(int id) {   
         this.id = id;
     }
     
@@ -94,6 +84,7 @@ public class student extends Person {
         this.course = course;
     }
     
+
     public double getAttendance() {
         return (double)this.attendance;
     }
@@ -111,7 +102,4 @@ public class student extends Person {
     
     }
 
-// id(autogenerate), currentyr,course,cgpa ,gpa,paid amt,attendance
-//constructor
-//getter and setter
-// balance payment = fees - paid
+

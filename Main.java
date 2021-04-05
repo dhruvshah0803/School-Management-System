@@ -1,6 +1,7 @@
 package JAVA_Project_student;
 import java.util.*;
 
+
 // constructors
 // public student(int id,int currentyr,String course,double cgpa, double gpa,double amountpaid,double attendance, 
 // String firstname,String lastname, String address,String phone_no, String email, String blood_group, int age ,String password) 
@@ -11,6 +12,10 @@ import java.util.*;
 // public teacher(String teacher_id, String subject, int experience, long course_id)
 
 public class Main {
+    // public static int se=0;
+    // public static int fe=0;
+    // public static int ce=0;
+
     public static void main(String[] args){
 // option menu -- student teacher course
 final int choice;
@@ -25,7 +30,7 @@ choice = sc.nextInt();
 while(true){
      int flag=0;
 switch (choice) {
-    case 1:
+    case 1:                 //----------------Faculty--------------------------------------
     int tn;
     System.out.println("Enter no of faculty members you want to create");
     tn=sc.nextInt();
@@ -96,7 +101,8 @@ switch (choice) {
 
         break;
         
-    case 2:
+        
+    case 2:               //---------------------------STUDENTS------------------------
     int n;
     System.out.println("Enter no of students you want to create");
     n=sc.nextInt();
@@ -104,9 +110,11 @@ switch (choice) {
         System.out.println("\n");
          System.out.println("Enter details of Student" + i);
          System.out.println("\n");
+        
         student[] arr; 
         arr = new student[n+1]; 
        
+        
         System.out.println("Enter Student ID : ");
         int id = sc.nextInt();
         System.out.println("Enter Firstname");
@@ -137,13 +145,17 @@ switch (choice) {
          System.out.println("Your  generated work email is : "+ workemail);
          String password = "password";
         
+
         
         arr[i] = new student(id, currentyr,course, cgpa, gpa,attendance, firstname, lastname, address, phone_no, email,blood_group, age,password);
         arr[i].setEmail(workemail);
+
+
         System.out.println("Do you want to confirm your data [Y/N]");
 
         char ch = sc.next().charAt(0);
-        if(ch == 'Y' ){
+        if(ch == 'Y' || ch=='y' ){
+            try {
             System.out.println("Student ID : " + arr[i].getId());
             System.out.println("Firstname :" + arr[i].getfirstname());
             System.out.println("Lastname : " + arr[i].getlastname());
@@ -157,15 +169,20 @@ switch (choice) {
             System.out.println("Your course name : " + arr[i].getCourse());
             System.out.println("Your working email :" +arr[i].getEmail());
             System.out.println("Blood group : " + arr[i].getBlood_group());
+        } catch(NullPointerException e) {
+            System.out.println("You are not eligible to continue");
+        }
         }
         else break;
       }
         break;
-    case 3:
+        
+    case 3:                     //----------------------------COURSES---------------------
     int cn=0;
     System.out.println("Enter no of courses you want : ");
     cn=sc.nextInt();
     for(int i=1;i<=cn;i++) {
+        
         System.out.println("\n");
          System.out.println("Enter details of the course" + i);
          System.out.println("\n");

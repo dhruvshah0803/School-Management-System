@@ -15,17 +15,20 @@ public class Person {
     private String password;
     
     public Person( String firstname, String lastname, String address, String phone_no, String email, String blood_group, int age ,String password) {
-    this.firstname = firstname;
-    this.lastname = lastname;
+
+    // this.firstname = firstname;
+    // this.lastname = lastname;
+    setName(firstname, lastname);
     this.address = address;
-    this.phone_no = phone_no;
+    //this.phone_no = phone_no;
+    setPhone_no(phone_no);
     this.email=email;
     this.blood_group= blood_group;
     this.age= age;
     this.password = setpassword(Defaultpasswordlength);
     }
     public void setAge(int age){
-        if(age>18 && age<60) System.out.println("Age should be greater than 18");
+        if(age<18 || age>60) System.out.println("Age should be greater than 18");
         else
         this.age = age;
     }
@@ -39,8 +42,9 @@ public class Person {
         return address;
     }
     public void setPhone_no(String phone_no){
-        if(phone_no.length()!=10)
+        if(phone_no.length()==10)
         this.phone_no=phone_no ;
+       
     }
     
     public String getfirstname(){
@@ -52,13 +56,14 @@ public class Person {
     }
     
     public void setName(String firstname, String lastname){
-        if(firstname.length()==0 || lastname.length()==0 )  {
-            System.out.println("Firstname or lastname cannot be equal to null");
-        }
-        else{
+        if(firstname.matches("[a-zA-Z]+") && lastname.matches("[a-zA-Z]+")){
             this.firstname = firstname;
             this.lastname = lastname;
         }
+        else{
+            System.out.println("INVALID INPUT");
+        }
+
     }
     
     public void setEmail(String email){ 

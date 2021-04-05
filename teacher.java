@@ -1,10 +1,7 @@
 package JAVA_Project_student;
 
 public class teacher extends Person {
-    // id,salary,subject,experience,
-//constructor
-//getter and setter
-// extra reward system
+
 private String teacher_id;
 private String subject;
 private int experience;
@@ -50,7 +47,5 @@ public long getCourse_id() {
 public void setCourse_id(long course_id) {
     this.course_id = course_id;
 }
-
-
 
 }
