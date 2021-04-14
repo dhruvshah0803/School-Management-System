@@ -1,6 +1,6 @@
-package JAVA_Project_student;
+package JAVA_Project_student.src;
 
-public class teacher extends Person {
+public class Teacher extends Person {                  // Inheritance
 
 private String teacher_id;
 private String subject;
@@ -8,13 +8,15 @@ private int experience;
 private long course_id;
 
 
-public teacher(String teacher_id, String subject, int experience, long course_id,String firstname,String lastname, String address,String phone_no, String email, String blood_group, int age ,String password) {
+public Teacher (String teacher_id, String subject, int experience, long course_id,String firstname,String lastname, String address,String phone_no, String email, String blood_group, int age ,String password) {
     super(firstname,lastname,address, phone_no, email, blood_group, age,password); 
 this.teacher_id = teacher_id;
 this.subject = subject;
     this.experience = experience;
     this.course_id = course_id;
 }
+
+public Teacher(){} 
 
 public String getTeacher_id() {
     return this.teacher_id;

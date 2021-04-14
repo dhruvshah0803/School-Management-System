@@ -1,16 +1,17 @@
-package JAVA_Project_student;
+package JAVA_Project_student.src;
 
-public class student extends Person {
+
+
+public class Student extends Person {                              // Inheritance
     private int id;
     private int currentyr;
     private double cgpa;
     private double gpa;
     private double attendance;
     private String course;
-    
+ 
 
-
-    public student(int id,int currentyr,String course,double cgpa, double gpa,
+    public Student(int id,int currentyr,String course,double cgpa, double gpa,
     double attendance, 
     String firstname,String lastname, String address,String phone_no, String email, String blood_group, int age ,String password) {
     super(firstname,lastname,address, phone_no, email, blood_group, age,password); 
@@ -22,6 +23,8 @@ public class student extends Person {
     setAttendance(attendance);
     }
     
+public  Student (){}
+
     public void setcgpa(double cgpa){
         if(cgpa<1.0) {
         System.out.println("RESULT FAIL");
@@ -56,7 +59,7 @@ public class student extends Person {
     
     public void setcurrentyr(int currentyr){
         if(currentyr>=2018 && currentyr<=2024){
-        System.out.println("Current year is " + currentyr);
+        System.out.println("Current year " + currentyr);
         this.currentyr=currentyr;
     }
     else{
@@ -81,7 +84,11 @@ public class student extends Person {
     }
     
     public void setCourse(String course) {
-        this.course = course;
+        if(course.matches("[a-zA-Z]+")){
+            this.course = course;
+        }
+        else System.out.println("Coursename should only contail alphabets");
+    
     }
     
 
@@ -99,7 +106,21 @@ public class student extends Person {
         }
     }
     
-    
+
+    @Override
+    public String toString() {
+        return "{" +
+            " id='" + id + "'" +
+            ", currentyr='" + currentyr + "'" +
+            ", cgpa='" + cgpa + "'" +
+            ", gpa='" + gpa + "'" +
+            ", attendance='" + attendance + "'" +
+            ", course='" + course + "'" +
+            "}";
     }
+   
+    
+    
+}
 
 

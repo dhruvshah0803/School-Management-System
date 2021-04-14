@@ -1,6 +1,18 @@
-package JAVA_Project_student;
+package JAVA_Project_student.src;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-public class Person {
+abstract class Human{
+ public abstract int getAge();
+ public abstract String getaddress() ;
+ public abstract String getfirstname(); 
+ public abstract String getlastname(); 
+ public abstract String getPhone_no(); 
+ public abstract String getEmail();
+ public abstract String getBlood_group() ;
+}
+
+ class Person extends Human {
     // name ,address ,phone no,email(auto), age,dob,blood grp, pass(auto) 
     //constructor
     //getter and setter
@@ -25,8 +37,17 @@ public class Person {
     this.email=email;
     this.blood_group= blood_group;
     this.age= age;
+    setAge(age);
     this.password = setpassword(Defaultpasswordlength);
     }
+
+    Person(){}
+
+    public Person(String firstname, String lastname, int age) {
+        setAge(age);
+        setName(firstname, lastname);
+    }
+
     public void setAge(int age){
         if(age<18 || age>60) System.out.println("Age should be greater than 18");
         else
@@ -42,9 +63,9 @@ public class Person {
         return address;
     }
     public void setPhone_no(String phone_no){
-        if(phone_no.length()==10)
+        if(phone_no.length()==10 && phone_no.matches("[0-9]+"))
         this.phone_no=phone_no ;
-       
+       else System.out.println("Please enter a valid phone number");
     }
     
     public String getfirstname(){
@@ -61,14 +82,30 @@ public class Person {
             this.lastname = lastname;
         }
         else{
-            System.out.println("INVALID INPUT");
+            System.out.println("ENTER A VALID NAME");
         }
 
     }
     
-    public void setEmail(String email){ 
-        this.email=email;  // does not check for same names
-    }
+    public void setEmail(String email) {
+        try {
+          if (email.length() < 5)
+            this.email = null;
+    
+          String regex = "^[A-Za-z0-9+_.-]+@(.+)$"; // email validation
+    
+          Pattern pattern = Pattern.compile(regex);
+          Matcher matcher = pattern.matcher(email);
+    
+          if (matcher.matches())
+            this.email = email; 
+          else 
+            System.out.println("\nInvalid email passed!");
+        } catch (NullPointerException e) {
+          System.out.println("\nEmail cannot be null");
+        }
+      }
+  
     public String getPhone_no() {
         return this.phone_no;
     }
@@ -103,5 +140,5 @@ public class Person {
         System.out.println("Your password for workEmail is :" + password);
         return this.password;
     }
-    
+
     }
